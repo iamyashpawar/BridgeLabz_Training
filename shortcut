@@ -1,0 +1,13 @@
+#!/bin/bash
+
+for elements in `ls *.txt`
+do
+  
+  FileBaseName=`echo $elements | awk -F . '{print $1}'`;
+   if[ -d $FileBaseName]
+ then
+ rmdir -r $FileBaseName;
+ fi
+  mkdir $FileBaseName;
+  mv $elements $FileBaseName;
+done
